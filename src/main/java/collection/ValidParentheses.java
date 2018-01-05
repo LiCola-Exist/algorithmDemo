@@ -8,7 +8,7 @@ import java.util.Deque;
  * https://leetcode.com/problems/valid-parentheses/description/
  * 检查输入的字符串中括号匹配，如果匹配返回true，否则返回false
  */
-public class VaildParentheses {
+public class ValidParentheses {
 
   /**
    * 括号匹配 在计算机的内部实现就是栈 这里就可以用栈处理入栈和出栈
