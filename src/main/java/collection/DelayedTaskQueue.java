@@ -1,4 +1,4 @@
-package queue;
+package collection;
 
 import java.text.DateFormat;
 import java.util.Date;

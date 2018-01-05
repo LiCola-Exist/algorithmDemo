@@ -5,7 +5,7 @@ package math;
  * https://leetcode.com/problems/reverse-integer/description/
  * 求一个整数的逆序整数，当它逆序整数溢出时，就返回0
  */
-public class IntegerReverse {
+public class ReverseInteger {
 
   /**
    * 整数翻转
