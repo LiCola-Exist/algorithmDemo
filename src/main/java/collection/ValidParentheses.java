@@ -6,7 +6,7 @@ import java.util.Deque;
 /**
  * Created by LiCola on 2018/1/5.
  * https://leetcode.com/problems/valid-parentheses/description/
- * 检查输入的字符串中括号匹配，如果匹配返回true，否则返回false
+ * 检查输入的字符串中括号匹配，如果匹配返回true，否则返回false 特殊的空输入返回true
  */
 public class ValidParentheses {
 
