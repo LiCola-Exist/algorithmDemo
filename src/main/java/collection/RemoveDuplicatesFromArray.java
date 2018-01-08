@@ -1,7 +1,5 @@
 package collection;
 
-import java.util.Arrays;
-
 /**
  * Created by LiCola on 2018/1/6.
  * https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
