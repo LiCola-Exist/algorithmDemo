@@ -5,7 +5,7 @@ package collection;
  * https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
  * 从有序数组中移除重复元素，并返回之后的数组长度，要求实现原地算法不能申请新的数组空间
  */
-public class RemoveDuplicatesFromArray {
+public class RemoveDuplicates {
 
   /**
    * 数组无法直接删除元素，返回新长度相当于返回截断后的长度，数组任有冗余但是新长度下没有冗余

@@ -9,7 +9,7 @@ public class LinkedList {
   protected Node head;
   protected Node current;
 
-  public Node getHead(){
+  public Node getHead() {
     return head;
   }
 
@@ -56,8 +56,8 @@ public class LinkedList {
 
   public static class Node {
 
-    int data;
-    Node next;
+    public int data;
+    public Node next;
 
     public Node(int data) {
       this.data = data;
@@ -78,7 +78,6 @@ public class LinkedList {
    * 采用覆盖方式：
    * 当前待删除节点 更换内容data
    * 并直接使用next.next得到他的下一节点后 完全模仿的构造出待删除节点的一下一个节点
-   * @param node
    */
   public void deleteNode(Node node) {
     if (node == null) {
@@ -90,7 +89,7 @@ public class LinkedList {
 
   public static final void main(String[] args) {
     LinkedList linkedList = new LinkedList();
-    Node nodeIndex=null;
+    Node nodeIndex = null;
     for (int i = 0; i < 5; i++) {
       Node itemNode = new Node(i);
       linkedList.add(itemNode);
@@ -99,7 +98,7 @@ public class LinkedList {
       }
     }
     linkedList.print();
-    System.out.println("delete node:"+nodeIndex);
+    System.out.println("delete node:" + nodeIndex);
     linkedList.deleteNode(nodeIndex);
     linkedList.print();
 
