@@ -19,5 +19,7 @@ public class PascalsTriangleTest {
     for (List<Integer> subList : lists) {
       System.out.println(subList);
     }
+
+    System.out.println(PascalsTriangle.getRow(3));
   }
 }

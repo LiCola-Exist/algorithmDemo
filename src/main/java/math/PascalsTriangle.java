@@ -38,11 +38,37 @@ public class PascalsTriangle {
         } else {
           //其他都左上+右上之和
           List<Integer> upSubList = list.get(i - 1);
-          subList.add(upSubList.get(j-1)+upSubList.get(j));
+          subList.add(upSubList.get(j - 1) + upSubList.get(j));
         }
       }
       list.add(subList);
     }
     return list;
+  }
+
+  /**
+   * [1],
+   * [1,1],
+   * [1,2,1],
+   * [1,3,3,1],
+   * [1,4,6,4,1]
+   * 输入行数，得到某个行的杨辉三角
+   */
+  public static List<Integer> getRow(int k) {
+    List<Integer> line = new ArrayList<Integer>();
+    // 加入第一个1
+    line.add(1);
+    if (k <= 0) {
+      return line;
+    }
+    for (int i = 1; i <= k; i++) {
+      //从右向左的递进
+      for (int j = i - 1; j >= 1; j--) {
+        line.set(j, line.get(j) + line.get(j - 1));
+      }
+      // 加上最后一个1
+      line.add(1);
+    }
+    return line;
   }
 }
