@@ -70,8 +70,6 @@ public class ClimbingStairs {
   /**
    * 最后的动态规划代码，时间复制度主要在迭代，就是O(N)
    * 而空间复杂度优化到了极限，数量固定，空间复杂度为O(1)
-   * @param n
-   * @return
    */
   public static int dynamicProgramming(int n) {
     if (n < 0) {
