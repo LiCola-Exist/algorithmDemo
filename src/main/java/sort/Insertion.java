@@ -16,6 +16,11 @@ public class Insertion extends Example {
    *
    * 命题B：对随机排序的长度为N且主键不重复的数组，平均情况下插入排序需要~N^2/4次比较以及~N^2/4，
    * 最坏情况下需要~N^2/2次比较和~N^2/2交换，最好情况下需要N-1次比较和0次交换
+   *
+   * 插入排序的理想数组：
+   * 1：数组中每个元素距离它的最终位置不远
+   * 2：一个有序的大数组接一个小数组
+   * 3：数组中只有几个元素的位置不正确
    */
   @Override
   public void sort(Comparable[] a) {
@@ -30,10 +35,10 @@ public class Insertion extends Example {
   }
 
   public static final void main(String[] args) {
-    Insertion selection = new Insertion();
+    Insertion insertion = new Insertion();
     Character[] characters = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E'};
-    selection.show(characters);
-    selection.sort(characters);
-    selection.show(characters);
+    insertion.show(characters);
+    insertion.sort(characters);
+    insertion.show(characters);
   }
 }
