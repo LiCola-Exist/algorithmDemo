@@ -10,7 +10,7 @@ public class SameTree {
   /**
    * 比较两树是否相等，直接深度遍历比对各个节点
    */
-  public  boolean isSameTree(TreeNode p1, TreeNode p2) {
+  public static boolean isSameTree(TreeNode p1, TreeNode p2) {
     if (p1 == null && p2 == null) {
       return true;
     }
