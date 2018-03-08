@@ -34,12 +34,6 @@ public class Selection extends Example {
   }
 
 
-  public static final void main(String[] args) {
-    Selection selection = new Selection();
-    Character[] characters = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E'};
-    selection.show(characters);
-    selection.sort(characters);
-    selection.show(characters);
-  }
+
 
 }

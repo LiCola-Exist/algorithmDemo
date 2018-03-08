@@ -34,11 +34,4 @@ public class Insertion extends Example {
     }
   }
 
-  public static final void main(String[] args) {
-    Insertion insertion = new Insertion();
-    Character[] characters = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E'};
-    insertion.show(characters);
-    insertion.sort(characters);
-    insertion.show(characters);
-  }
 }

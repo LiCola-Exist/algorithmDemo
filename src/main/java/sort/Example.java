@@ -21,7 +21,7 @@ public abstract class Example {
         System.out.print(a[i]+" ");
       }
       System.out.println("");
-      System.out.println("输入结束----");
+      System.out.println("输出结束----");
     }
 
     public boolean isSorted(Comparable[] a){

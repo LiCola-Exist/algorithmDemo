@@ -30,11 +30,5 @@ public class Shell extends Example {
     }
   }
 
-  public static final void main(String[] args) {
-    Shell shell = new Shell();
-    Character[] characters = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E'};
-    shell.show(characters);
-    shell.sort(characters);
-    shell.show(characters);
-  }
+
 }
