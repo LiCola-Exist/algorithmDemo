@@ -1,9 +1,12 @@
 package sort;
 
+import static sort.Example.exch;
+import static sort.Example.less;
+
 /**
  * Created by LiCola on 2018/3/2.
  */
-public class Insertion extends Example {
+public class Insertion  {
 
   /**
    * 插入排序：将元素插入到已经有序的数组中
@@ -22,8 +25,7 @@ public class Insertion extends Example {
    * 2：一个有序的大数组接一个小数组
    * 3：数组中只有几个元素的位置不正确
    */
-  @Override
-  public void sort(Comparable[] a) {
+  public static void sort(Comparable[] a) {
     //升序排序
     int N = a.length;
     for (int i = 1; i < N; i++) {

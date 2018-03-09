@@ -12,44 +12,52 @@ public class ExampleTest {
 
   @Test
   public void sortInsertion() {
-    Insertion insertion = new Insertion();
     Character[] characters = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E'};
-    insertion.show(characters);
-    insertion.sort(characters);
-    insertion.show(characters);
+    Example.show(characters);
+    Insertion.sort(characters);
+    Example.show(characters);
     assertArrayEquals(new Character[]{'A', 'E', 'E', 'L', 'M', 'O', 'P', 'R', 'S', 'T', 'X'},
         characters);
   }
 
   @Test
   public void sortSelection() {
-    Selection selection = new Selection();
     Character[] characters = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E'};
-    selection.show(characters);
-    selection.sort(characters);
-    selection.show(characters);
+    Example.show(characters);
+    Selection.sort(characters);
+    Example.show(characters);
     assertArrayEquals(new Character[]{'A', 'E', 'E', 'L', 'M', 'O', 'P', 'R', 'S', 'T', 'X'},
         characters);
+
   }
 
   @Test
   public void sortBubble() {
-    Bubble bubble = new Bubble();
     Character[] characters = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E'};
-    bubble.show(characters);
-    bubble.sort(characters);
-    bubble.show(characters);
+    Example.show(characters);
+    Bubble.sort(characters);
+    Example.show(characters);
     assertArrayEquals(new Character[]{'A', 'E', 'E', 'L', 'M', 'O', 'P', 'R', 'S', 'T', 'X'},
         characters);
   }
 
   @Test
   public void sortShell() {
-    Shell shell = new Shell();
     Character[] characters = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E'};
-    shell.show(characters);
-    shell.sort(characters);
-    shell.show(characters);
+    Example.show(characters);
+    Shell.sort(characters);
+    Example.show(characters);
+    assertArrayEquals(new Character[]{'A', 'E', 'E', 'L', 'M', 'O', 'P', 'R', 'S', 'T', 'X'},
+        characters);
+  }
+
+  @Test
+  public void sortMerge() {
+    Character[] characters = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E'};
+    Example.show(characters);
+    Merge.sort(characters);
+//    Merge.sortBottomUp(characters);
+    Example.show(characters);
     assertArrayEquals(new Character[]{'A', 'E', 'E', 'L', 'M', 'O', 'P', 'R', 'S', 'T', 'X'},
         characters);
   }

@@ -18,17 +18,15 @@ public class StringReverse {
     if (target == null || target.length() <= 1) {
       return target;
     }
+    //StringBuilder->AbstractStringBuilder->采用遍历翻转（折半遍历）
     return new StringBuilder(target).reverse().toString();
   }
 
   /**
    * 递归反转
    * 把问题规模缩小，这就得到两个规模的问题
-   * 1：长度大于1的情况：String拆分两个，一个头和已经反转好的尾部，他们的反转就是反向拼接
+   * 1：长度大于1的情况：String拆分两个，一个头字符和已经反转好字符串，他们的反转就是反向拼接
    * 2：长度等于1的情况：单独的String反转就是他本身。
-   *
-   * @param target
-   * @return
    */
   private static String reverseRecursive(String target) {
     if (target == null || target.length() <= 1) {

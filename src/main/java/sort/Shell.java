@@ -1,17 +1,19 @@
 package sort;
 
+import static sort.Example.exch;
+import static sort.Example.less;
+
 /**
  * Created by LiCola on 2018/3/2.
  */
-public class Shell extends Example {
+public class Shell  {
 
   /**
    * 希尔排序：基于插入排序的排序算法，对于大规模乱序数组插入排序很慢，因为它只会交换相邻元素，元素只能一点点的移动，
    * 极端情况下，如果主键最小的元素正好在数组末尾，要将它移动正确位置就需要移动N-1次。希尔排序使用交换不相邻元素，
    * 对数组的局部进行排序，最终用插入排序将局部有序的数组排序
    */
-  @Override
-  public void sort(Comparable[] a) {
+  public static void sort(Comparable[] a) {
     //a[]按升序排序
     int N = a.length;
     int h = 1;

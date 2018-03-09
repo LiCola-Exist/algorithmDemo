@@ -1,9 +1,12 @@
 package sort;
 
+import static sort.Example.exch;
+import static sort.Example.less;
+
 /**
  * Created by LiCola on 2018/3/2.
  */
-public class Selection extends Example {
+public class Selection  {
 
   /**
    * 选择排序：最简单的排序算法，因为它在不断的选择剩余元素之中的最小值
@@ -17,8 +20,7 @@ public class Selection extends Example {
    *
    * 命题A：对长度为N的数组，选择排序需要大约N^2/2次比较和N次交换
    */
-  @Override
-  public void sort(Comparable[] a) {
+  public static void sort(Comparable[] a) {
     //将数组按升序排序 从小到大
     int N = a.length;
     for (int i = 0; i < N; i++) {
@@ -32,8 +34,5 @@ public class Selection extends Example {
       }
     }
   }
-
-
-
 
 }
