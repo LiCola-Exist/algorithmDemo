@@ -1,5 +1,7 @@
 package sort;
 
+import java.util.Arrays;
+import java.util.Collections;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -56,7 +58,24 @@ public class ExampleTest {
     Character[] characters = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E'};
     Example.show(characters);
     Merge.sort(characters);
-//    Merge.sortBottomUp(characters);
+    Example.show(characters);
+    assertArrayEquals(new Character[]{'A', 'E', 'E', 'L', 'M', 'O', 'P', 'R', 'S', 'T', 'X'},
+        characters);
+
+    System.out.println("并归的非递归形式");
+    Character[] characters1 = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E'};
+    Example.show(characters1);
+    Merge.sortBottomUp(characters1);
+    Example.show(characters1);
+    assertArrayEquals(new Character[]{'A', 'E', 'E', 'L', 'M', 'O', 'P', 'R', 'S', 'T', 'X'},
+        characters1);
+  }
+
+  @Test
+  public void sortQuick(){
+    Character[] characters = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E'};
+    Example.show(characters);
+    Quick.sort(characters);
     Example.show(characters);
     assertArrayEquals(new Character[]{'A', 'E', 'E', 'L', 'M', 'O', 'P', 'R', 'S', 'T', 'X'},
         characters);
