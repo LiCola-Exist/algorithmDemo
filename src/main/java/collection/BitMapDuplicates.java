@@ -16,6 +16,8 @@ public class BitMapDuplicates {
 
   /**
    * 默认 两个数组有序 从小到大
+   * 算法的空间复杂度与数组中最大的值 相关 O(max(e))
+   * 时间复杂度，就是Map的最优情况，O（1）常数阶
    */
   public static List<Integer> duplicate(int[] src1, int[] src2) {
     int[] bigArray;
@@ -63,7 +65,7 @@ public class BitMapDuplicates {
 
     public void add(int num) {
       int arrayIndex = num >> 3;// 除以8 得到所在数组索引 行数
-      int position = num & 0x07;//与7得到 7位bit上的最大值 数组上位置索引 列数
+      int position = num & 7;//与7得到 8位bit上的槽数 数组上位置索引 列数
 
       //操作目标槽点 或为1 即设置为标志位 表示存在这个数
       bits[arrayIndex] |= FLAG << position;
@@ -71,7 +73,7 @@ public class BitMapDuplicates {
 
     public boolean contain(int num) {
       int arrayIndex = num >> 3;// 除以8 得到所在数组索引 行数
-      int position = num & 0x07;//与7得到 数组上位置索引 列数
+      int position = num & 7;////与7得到 8位bit上的槽数 数组上位置索引 列数
       //当根据行列从bitmap中取出数据时 如3行6列 表示30（3*8+6）的槽点 取出值是 整数值是2^position 只能判断非0 表示存在
       return (bits[arrayIndex] & (FLAG << position)) != 0;
     }

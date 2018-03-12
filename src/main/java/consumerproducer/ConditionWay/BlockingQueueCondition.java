@@ -1,4 +1,4 @@
-package DesignPattern.ProducerConsumer.ConditionWay;
+package consumerproducer.ConditionWay;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
@@ -14,8 +14,8 @@ public class BlockingQueueCondition<E> {
   private Queue<E> queue = null;
   private int limit;
   private Lock lock = new ReentrantLock();//重入锁
-  private Condition notFull = lock.newCondition();//锁的显式条件 不满
-  private Condition notEmpty = lock.newCondition();//锁的显示条件 不空
+  private Condition notFull = lock.newCondition();//锁的显式条件 非满
+  private Condition notEmpty = lock.newCondition();//锁的显示条件 非空
 
   public BlockingQueueCondition(int limit) {
     this.limit = limit;
@@ -26,8 +26,10 @@ public class BlockingQueueCondition<E> {
     lock.lockInterruptibly();
     try {
       while (queue.size() == limit) {
+        //任务队列已满 等待非满条件信号
         notFull.await();
       }
+      //成功添加新任务 非空条件唤醒
       queue.add(e);
       notEmpty.signal();
     } finally {
@@ -39,8 +41,10 @@ public class BlockingQueueCondition<E> {
     lock.lockInterruptibly();
     try {
       while (queue.isEmpty()) {
+        //任务队列为空 等待非空条件信号
         notEmpty.await();
       }
+      //成功取出任务 非满条件唤醒
       E e = queue.poll();
       notFull.signal();
       return e;
