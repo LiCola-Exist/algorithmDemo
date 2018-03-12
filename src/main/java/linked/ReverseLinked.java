@@ -15,7 +15,7 @@ public class ReverseLinked {
     }
     linkedList.print();
 //     reverseTraverse(nodeFirst);
-    linkedList.print(reverseRecursive(linkedList.getHead()));
+    LinkedList.printNode(reverseRecursive(linkedList.getHead()));
   }
 
   /**

@@ -38,15 +38,15 @@ public class LinkedList {
   }
 
   public void print() {
-    this.print(head);
+    printNode(head);
   }
 
-  public void print(Node node) {
+  public static void printNode(Node node) {
     if (node == null) {
       return;
     }
 
-    current = node;
+    Node current = node;
     System.out.println("----node print----");
     while (current != null) {
       System.out.println("node:" + current.data);
