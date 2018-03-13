@@ -9,11 +9,18 @@ import java.util.HashMap;
  * Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
  *
  * 爬楼梯，一次1步或2步，爬到顶部要多少步
- *
+ * 假设已经来到最后一步，有且仅有两种情况，1：从8-10走2步，：2：从9-10走1步，依次类推，缩小问题规模
  * 解题思路：这是最简单的动态规划问题，我们推导出公式
  * F(1)=1
  * F(2)=2
  * F(N)=F(N-1)+F(N-2) (N>=3)
+ *
+ *
+ * 动态规划中有三个重要的概念：
+ * 1：最有子结构（F(10)=F(9)+F(8),因此F(9)和F(8)就是F(10)的最优子结构）
+ * 2：边界（F(1)=1,F(2)=2，就是问题的边界。否则无法得到有限结果）
+ * 3：状态转移公式（F(N)=F(N-1)+F(N-2)，就是状态转移公式）
+ *
  * 实现代码是我们的讨论的关键。
  */
 public class ClimbingStairs {
@@ -68,7 +75,7 @@ public class ClimbingStairs {
   }
 
   /**
-   * 最后的动态规划代码，时间复制度主要在迭代，就是O(N)
+   * 最后的动态规划代码，时间复杂度主要在迭代，就是O(N)
    * 而空间复杂度优化到了极限，数量固定，空间复杂度为O(1)
    */
   public static int dynamicProgramming(int n) {

@@ -80,7 +80,7 @@ public class MergeSortLinked {
     Node head = new Node(0);
     Node cur = head;
 
-    //list1和list2 同步遍历 比对大小 因为两者有序 只要挨个比对 插入 就是有序链表
+    //同步遍历 比对大小 因为两者有序 只要挨个比对 插入 就是有序链表
     while (node1 != null && node2 != null) {
       if (node1.data < node2.data) {
         cur.next = node1;
