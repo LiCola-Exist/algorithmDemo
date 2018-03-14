@@ -1,4 +1,4 @@
-package DesignPattern.Observer;
+package DesignPattern.Observer.jdk;
 
 /**
  * Created by LiCola on 2017/8/24.
