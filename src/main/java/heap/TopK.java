@@ -19,7 +19,7 @@ public class TopK<E extends Comparable<E>> {
 
   public TopK(int k) {
     this.k = k;
-    priorityQueue = new PriorityQueue<>(k);
+    priorityQueue = new PriorityQueue<>(k);//优先队列 默认就是最小堆 每个节点都小于其子节点 根就是最小值
   }
 
   public void addAll(Collection<? extends E> collections) {
@@ -31,25 +31,22 @@ public class TopK<E extends Comparable<E>> {
   public void add(E e) {
     if (priorityQueue.size() < k) {
       priorityQueue.add(e);//还有空间 直接插入
-      return;
+    } else {
+      Comparable<E> head = priorityQueue.peek();//访问 堆的头部元素 即最小值
+      if (head.compareTo(e) < 0) {
+        //堆中的最小值 小于插入值 需要末位淘汰（概念上的末位）
+        //关于末位淘汰 就是为了保持堆上永远是前K个值
+        priorityQueue.poll();//弹出最小值
+        priorityQueue.add(e);//插入元素 即替换堆的最小值
+      }
     }
-
-    Comparable<E> head = priorityQueue.peek();//访问 堆的头部元素 即最小值
-    if (head.compareTo(e) > 0) {
-      //堆的最小值 大于待插入元素 表示插入元素不是当前堆中前K个元素 不插入
-      return;
-    }
-
-    priorityQueue.poll();//弹出最小值
-    priorityQueue.add(e);//插入元素 即替换堆的最小值
-
   }
 
-  public <T> T[] toArray(T[] a){
+  public <T> T[] toArray(T[] a) {
     return priorityQueue.toArray(a);
   }
 
-  public E getKth(){
+  public E getKth() {
     return priorityQueue.peek();
   }
 }

@@ -24,7 +24,7 @@ public class Quick {
     if (height <= low) {
       return;
     }
-    int j = partition(a, low, height);//切分点
+    int j = partition(a, low, height);//切分点 该位置已经确定 不用参与后面的排序
     sort(a, low, j - 1);//对左半边 a[low~j-1] 排序
     sort(a, j + 1, height);//对右半边 a[j+1,height] 排序
   }
@@ -46,28 +46,28 @@ public class Quick {
    * 主键相同元素间的相对位置被破坏，不稳定。
    */
   private static int partition(Comparable[] a, int low, int height) {
-    int i = low;//左指针 也就是
-    int j = height + 1;//右指针
+    int left = low;//左指针
+    int right = height + 1;//右指针
 
     Comparable v = a[low];
     while (true) {
-      while (less(a[++i], v)) {
-        if (i == height) {
+      while (less(a[++left], v)) {//左指针 向右扫描
+        if (left == height) {//左指针的临界点
           break;
         }
       }
-      while (less(v, a[--j])) {
-        if (j == low) {
+      while (less(v, a[--right])) {//右指针 向左扫描
+        if (right == low) {//右指针的临界点
           break;
         }
       }
-      if (i >= j) {//两指针碰撞 退出循环
+      if (left >= right) {//两指针碰撞 退出循环
         break;
       }
-      exch(a, i, j);
+      exch(a, left, right);
     }
     //交换
-    exch(a, low, j);
-    return j;
+    exch(a, low, right);
+    return right;
   }
 }

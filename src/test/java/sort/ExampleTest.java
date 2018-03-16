@@ -79,5 +79,6 @@ public class ExampleTest {
     Example.show(characters);
     assertArrayEquals(new Character[]{'A', 'E', 'E', 'L', 'M', 'O', 'P', 'R', 'S', 'T', 'X'},
         characters);
+
   }
 }

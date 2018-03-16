@@ -59,8 +59,8 @@ public class Merge {
    * 通过合并实现对整个数组段内（low~height）的排序
    */
   public static void merge(Comparable[] a, int low, int middle, int height) {
-    int i = low;//定义左索引
-    int j = middle + 1;//定义右索引
+    int left = low;//定义左索引
+    int right = middle + 1;//定义右索引
 
     //复制待排序数组到 辅助数组
     for (int k = low; k <= height; k++) {
@@ -69,14 +69,14 @@ public class Merge {
 
     //从[low-height]遍历元素
     for (int k = low; k <= height; k++) {
-      if (i > middle) {//左半边用尽 只能取右半边元素
-        a[k] = aux[j++];
-      } else if (j > height) {//右半边用尽 只能取左半边元素
-        a[k] = aux[i++];
-      } else if (less(aux[i], aux[j])) {//当前索引下 右半边元素小于左半边元素 使用右半边元素 填充
-        a[k] = aux[i++];
+      if (left > middle) {//左半边用尽 只能取右半边元素
+        a[k] = aux[right++];
+      } else if (right > height) {//右半边用尽 只能取左半边元素
+        a[k] = aux[left++];
+      } else if (less(aux[left], aux[right])) {//当前索引下 右半边元素小于左半边元素 使用右半边元素 填充
+        a[k] = aux[left++];
       } else {////当前索引下 左半边元素小于右半边元素 使用左半边元素 填充
-        a[k] = aux[j++];
+        a[k] = aux[right++];
       }
     }
   }
