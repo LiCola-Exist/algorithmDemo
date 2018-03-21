@@ -2,9 +2,6 @@ package DesignPattern.Proxy;
 
 public class ProxyClient {
 
-
-
-
   public static final void main(String[] args) {
     ProxyInstance proxyInstance = new ProxyInstance();
     Api api = proxyInstance.create(Api.class);

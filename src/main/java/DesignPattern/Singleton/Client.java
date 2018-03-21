@@ -7,8 +7,28 @@ public class Client {
 
   public static final void main(String[] args) {
 //    testStatic();
-    testInnerClass();
+//    testInnerClass();
+    testDCL();
+  }
 
+  private static void testDCL() {
+
+    Thread[] threads=new Thread[100];
+    for (int i = 0; i < threads.length; i++) {
+      threads[i]=new Thread(new Runnable() {
+        @Override
+        public void run() {
+          System.out.println(
+              "Thread :" + Thread.currentThread().toString() + " instance:" + SingletonDCL
+                  .getInstance().hashCode());
+        }
+      });
+    }
+
+    for (Thread itemThread :
+        threads) {
+      itemThread.start();
+    }
   }
 
   private static void testInnerClass() {
@@ -20,7 +40,8 @@ public class Client {
     SingletonStatic singletonStatic;
     System.out.println(SingletonStatic.class);//访问class 只是得到该类的信息 与实例与类方法无关
 
-    System.out.println(SingletonStatic.Validate_delivery_var);//访问final字段 编译器优化 字面量直接被传递过来 .class编译后文件可证实
+    System.out
+        .println(SingletonStatic.Validate_delivery_var);//访问final字段 编译器优化 字面量直接被传递过来 .class编译后文件可证实
 
     System.out.println(SingletonStatic.Invalidate_Var);//访问非final字段 没有优化 编译器为保证字段的正确赋值 需要client方法执行
   }

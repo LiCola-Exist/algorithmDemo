@@ -11,13 +11,9 @@ public class SameTreeTest {
 
   @Test
   public void isSame() {
-    TreeNode root1 = new TreeNode(0);
-    root1.left = new TreeNode(1);
-    root1.right = new TreeNode(2);
+    TreeNode<Integer> root1= TreeNode.makeTree(0,1,2);
 
-    TreeNode root2 = new TreeNode(0);
-    root1.left = new TreeNode(20);
-    root1.right = new TreeNode(10);
+    TreeNode<Integer> root2 = TreeNode.makeTree(10,20,30);
     assertEquals(false, SameTree.isSameTree(root1, root2));
     assertEquals(true, SameTree.isSameTree(root1, root1));
     assertEquals(false, SameTree.isSameTree(root1, null));

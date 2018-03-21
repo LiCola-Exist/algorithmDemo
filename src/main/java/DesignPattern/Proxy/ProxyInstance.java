@@ -19,12 +19,12 @@ public class ProxyInstance implements InvocationHandler {
       return null;
     }
 
-
     Class<?> returnType = method.getReturnType();
 
     if (returnType.equals(String.class)){
       return "proxyValue";
-    }else {
+    }
+    else {
       return null;
     }
   }

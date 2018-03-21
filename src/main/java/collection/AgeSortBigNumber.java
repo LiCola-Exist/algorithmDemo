@@ -56,7 +56,7 @@ public class AgeSortBigNumber {
         //空槽 直接插入
         hashMap[index] = new Node<>(e, null);
       } else {
-        //非空槽 头插法 不用遍历链表
+        //非空槽 头插法 不用遍历链表 缺点：就会导致排序不稳定 后面插入的值在新值前面 输出时主键相同元素间的相对位置被调整
         hashMap[index] = new Node<>(e, target);
       }
     }
