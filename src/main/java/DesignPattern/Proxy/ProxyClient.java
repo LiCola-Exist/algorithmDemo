@@ -3,11 +3,16 @@ package DesignPattern.Proxy;
 public class ProxyClient {
 
   public static final void main(String[] args) {
+
+    //设置属性 保留ProxyGenerator类生成的字节码文件
+    System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
+
     ProxyInstance proxyInstance = new ProxyInstance();
     Api api = proxyInstance.create(Api.class);
     String result = api.doSomething(12);
     System.out.println("result =" + result);
 
+    System.out.println("class:"+api.getClass().toString());
 
     ProxyInstance proxyInstanceService=new ProxyInstance();
     ServiceApi serviceApi = proxyInstanceService.create(ServiceApi.class);

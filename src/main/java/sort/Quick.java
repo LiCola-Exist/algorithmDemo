@@ -64,7 +64,7 @@ public class Quick {
       if (left >= right) {//两指针碰撞 退出循环
         break;
       }
-      exch(a, left, right);
+      exch(a, left, right);//交换左右 保证以a[low]为中点 左右元素有规则分布
     }
     //交换
     exch(a, low, right);

@@ -9,6 +9,7 @@ public class ProxyInstance implements InvocationHandler {
 
 
   public <T> T create(final Class<T> tClass){
+
     Object instance = Proxy.newProxyInstance(tClass.getClassLoader(), new Class[]{tClass}, this);
     return tClass.cast(instance);
   }
