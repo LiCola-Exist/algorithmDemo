@@ -5,7 +5,7 @@ public class ProxyClient {
   public static final void main(String[] args) {
 
     //设置属性 保留ProxyGenerator类生成的字节码文件
-    System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
+//    System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
 
     ProxyInstance proxyInstance = new ProxyInstance();
     Api api = proxyInstance.create(Api.class);
