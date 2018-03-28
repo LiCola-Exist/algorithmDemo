@@ -10,8 +10,8 @@ package DesignPattern.Singleton;
  */
 public class SingletonDCL {
 
-  //volatile原子 修饰 保证内存可见性
-  private static SingletonDCL INSTANCE = null;
+  //volatile原子 修饰 保证内存可见性以及指令重排
+  private volatile static SingletonDCL INSTANCE = null;
 
   public static SingletonDCL getInstance() {
     //先检查实例是否存在 如果不存在 才进入类同步代码块 优化处理 避免每次都需要加锁

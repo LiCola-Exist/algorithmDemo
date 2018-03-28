@@ -19,7 +19,6 @@ public class ProxyInstance implements InvocationHandler {
     if (args==null||args.length==0){
       return null;
     }
-
     Class<?> returnType = method.getReturnType();
 
     if (returnType.equals(String.class)){

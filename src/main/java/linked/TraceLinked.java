@@ -44,7 +44,7 @@ public class TraceLinked {
       Node nodeFast = head;
 
       while (nodeFast != null && nodeFast.next != null) {
-        nodeFast = nodeFast.next.next;
+        nodeFast = nodeFast.next.next;//一次走两步
         nodeSlow = nodeSlow.next;
       }
 
@@ -55,7 +55,6 @@ public class TraceLinked {
      * 问题：判断单链表是否有环
      * 解决思路：首先有环链表是不能遍历完的 无穷无尽 但是也是因为无法遍历完成 所以两个快慢节点 一定能够在环中遇到。
      * 快慢双节点同时从头节点起步，快节点跨2步，慢节点1步，如果能够发生两者相遇 即存在环。
-     * @return
      */
     public Node hasCircle() {
       Node nodeSlow = head;
@@ -76,17 +75,16 @@ public class TraceLinked {
      * 问题：链表存在环，获取环的长度
      * 解决思路：首先根据方法得知链表有环，并且得到快慢指针相遇节点，该节点肯定存在环中，
      * 从该节点一步步走 肯定能够再次回到该节点 而走的步长就是换的长度。
-     * @return
      */
-    public int getCircleLength(){
+    public int getCircleLength() {
       Node meetNode = hasCircle();
 
-      int length=0;
-      Node stepNode=meetNode;
-      while (stepNode!=null){
-        stepNode=stepNode.next;
+      int length = 0;
+      Node stepNode = meetNode;
+      while (stepNode != null) {
+        stepNode = stepNode.next;
         length++;
-        if (stepNode==meetNode){
+        if (stepNode == meetNode) {
           return length;
         }
       }
@@ -94,23 +92,31 @@ public class TraceLinked {
       return 0;
     }
 
-    public Node getCircleEntry(){
-      int circleLength = getCircleLength();
-      if (circleLength==0){
+    /**
+     * 获取环的入口
+     * 1：快指针先走环长度
+     * 2：快慢指针开始走，当两指针相遇即 快指针走了一圈环 慢指针刚好走到环入口
+     */
+    public Node getCircleEntry() {
+      int circleLength = getCircleLength();//先获取环的长度
+      if (circleLength == 0) {
         return null;
       }
 
-      Node nodeFast=head;
-      Node nodeSlow=head;
+      //从头走
+      Node nodeFast = head;
+      Node nodeSlow = head;
 
+      //快指针先走 环的长度
       for (int i = 0; i < circleLength; i++) {
-        nodeFast=nodeFast.next;
+        nodeFast = nodeFast.next;
       }
 
-      while (nodeFast!=null&&nodeSlow!=null){
-        nodeSlow=nodeSlow.next;
-        nodeFast=nodeFast.next;
-        if (nodeFast==nodeSlow){
+      //快慢指针开始 当指针碰撞 即 快指针走了一圈环 而慢指针刚好走到环入口
+      while (nodeFast != null && nodeSlow != null) {
+        nodeSlow = nodeSlow.next;
+        nodeFast = nodeFast.next;
+        if (nodeFast == nodeSlow) {
           return nodeSlow;
         }
       }
@@ -130,27 +136,27 @@ public class TraceLinked {
     System.out.println("get middle node :" + linkedList.getMiddle());
 
     System.out.println("this circle test--->");
-    DoublePointerLinkedList linkedListCircle=new DoublePointerLinkedList();
+    DoublePointerLinkedList linkedListCircle = new DoublePointerLinkedList();
     Node nodeLast;
-    Node nodeCircleEntry=null;
-    int length=7;
+    Node nodeCircleEntry = null;
+    int length = 7;
     for (int i = 0; i < length; i++) {
-      Node tempNode= linkedListCircle.add(i);
+      Node tempNode = linkedListCircle.add(i);
 
-      if (i==2){
-        nodeCircleEntry=tempNode;
+      if (i == 2) {
+        nodeCircleEntry = tempNode;
         System.out.println(nodeCircleEntry);
       }
 
-      if (i==(length-1)){
-        nodeLast=tempNode;
-        nodeLast.next=nodeCircleEntry;
+      if (i == (length - 1)) {
+        nodeLast = tempNode;
+        nodeLast.next = nodeCircleEntry;
       }
 
     }
-    System.out.println("this linked list has circle:"+(linkedListCircle.hasCircle()!=null));
-    System.out.println("this linked list circle length:"+linkedListCircle.getCircleLength());
-    System.out.println("this linked list circle entry:"+linkedListCircle.getCircleEntry().data);
+    System.out.println("this linked list has circle:" + (linkedListCircle.hasCircle() != null));
+    System.out.println("this linked list circle length:" + linkedListCircle.getCircleLength());
+    System.out.println("this linked list circle entry:" + linkedListCircle.getCircleEntry().data);
 //    linkedListCircle.print();//有环列表 无法遍历完成
   }
 }

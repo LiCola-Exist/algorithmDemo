@@ -33,6 +33,9 @@ public class StringReverse {
       return target;
     }
 
+    /**
+     * 头字符和已经反转好的字符拼接
+     */
     return reverseRecursive(target.substring(1)) + target.charAt(0);
   }
 }
