@@ -13,6 +13,11 @@ public class SingletonInnerHolder {
 
     //类级内部类的 静态变量 类级内部类可以访问到外部类的静态方法 所以可以访问到私有的构造方法
     private static SingletonInnerHolder INSTANCE = new SingletonInnerHolder();
+
+    static {
+      System.out.println("内部类的初始化");
+    }
+
   }
 
   //访问类级内部类 导致虚拟机加载类 线程安全的初始化实例
@@ -25,6 +30,6 @@ public class SingletonInnerHolder {
   }
 
   static {
-    System.out.println("类的初始化");
+    System.out.println("外部类的初始化");
   }
 }

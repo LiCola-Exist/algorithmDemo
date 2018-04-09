@@ -7,8 +7,8 @@ public class Client {
 
   public static final void main(String[] args) {
 //    testStatic();
-//    testInnerClass();
-    testDCL();
+    testInnerClass();
+//    testDCL();
   }
 
   private static void testDCL() {
@@ -32,7 +32,7 @@ public class Client {
   }
 
   private static void testInnerClass() {
-    System.out.println(SingletonInnerHolder.validate);
+//    System.out.println(SingletonInnerHolder.validate);
     System.out.println(SingletonInnerHolder.getInstance());
   }
 

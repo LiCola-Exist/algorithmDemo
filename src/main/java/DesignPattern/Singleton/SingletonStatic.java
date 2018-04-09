@@ -12,7 +12,7 @@ public class SingletonStatic {
   public static String Invalidate_Var = "当外部访问先访问该字段";
   public static final String Validate_delivery_var = "被编译器优化的传播字段";
 
-  private static SingletonStatic INSTANCE;
+  private static SingletonStatic INSTANCE = new SingletonStatic();
 
   public static SingletonStatic getInstance() {
     return INSTANCE;
