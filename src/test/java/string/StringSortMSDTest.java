@@ -1,0 +1,21 @@
+package string;
+
+import static org.junit.Assert.*;
+
+import java.util.Arrays;
+import org.junit.Test;
+import util.StdIn;
+import util.StdOut;
+
+/**
+ * Created by LiCola on 2018/4/9.
+ */
+public class StringSortMSDTest {
+
+  @Test
+  public void sort() {
+    String[] input=new String[]{"she","sells","seashells","by","the","seashore","the","shells","she","sells","are","surely","seashells"};
+    StringSortMSD.sort(input);
+    StdOut.println(Arrays.toString(input));
+  }
+}

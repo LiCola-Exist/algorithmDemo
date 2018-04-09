@@ -66,7 +66,7 @@ public class Quick {
       }
       exch(a, left, right);//交换左右 保证以a[low]为中点 左右元素有规则分布
     }
-    //交换
+    //交换 让切分数落在确定的切分点上
     exch(a, low, right);
     return right;
   }
