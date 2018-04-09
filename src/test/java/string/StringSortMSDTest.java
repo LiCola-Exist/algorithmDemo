@@ -14,8 +14,14 @@ public class StringSortMSDTest {
 
   @Test
   public void sort() {
-    String[] input=new String[]{"she","sells","seashells","by","the","seashore","the","shells","she","sells","are","surely","seashells"};
+    String[] input = new String[]{"she", "sells", "seashells", "by", "the", "seashore", "the",
+        "shells", "she", "sells", "are", "surely", "seashells"};
     StringSortMSD.sort(input);
-    StdOut.println(Arrays.toString(input));
+    StdOut.println("高位优先字符串排序");
+    for (String item :
+        input) {
+      StdOut.println(item);
+    }
+
   }
 }
