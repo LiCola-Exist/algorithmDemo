@@ -12,12 +12,20 @@ public class StringSearchTest {
   @Test
   public void searchViolent() {
     int index = StringSearch.searchViolent("bc", "abc");
-    assertEquals(1,index);
+    assertEquals(1, index);
 
     int index1 = StringSearch.searchViolent("ed", "abc");
-    assertEquals(-1,index1);
-    System.out.println("search not find index:"+index1);
-    "内容".indexOf("s");
+    assertEquals(-1, index1);
+    System.out.println("search not find index:" + index1);
+  }
 
+  @Test
+  public void searchBack() {
+    int index = StringSearch.searchBack("abc", "ababc");
+    assertEquals(2, index);
+
+    int index1 = StringSearch.searchBack("ed", "abc");
+    assertEquals(-1, index1);
+    System.out.println("search not find index:" + index1);
   }
 }
