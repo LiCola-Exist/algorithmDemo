@@ -9,7 +9,7 @@ public class StringSortMSD {
   private static final int ASCII_ALPHABET_END = 122;
 
   private static final int R = 26;//简单化 纯英文字母 字母表
-  private static final int CUTOFF = 1;   // cutoff to insertion sort
+  private static final int CUTOFF = 0;   // cutoff to insertion sort
 
   public static void sort(String[] a) {
     int n = a.length;

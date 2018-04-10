@@ -3,7 +3,7 @@ package string;
 /**
  * Created by LiCola on 2018/3/24.
  */
-public class StringCountingSortLSD {
+public class StringSortLSD {
 
   private static final int ASCII_NUM_START = 48;
   private static final int ASCII_NUM_END = 57;
