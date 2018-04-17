@@ -38,22 +38,6 @@ public class Merge {
   }
 
   /**
-   * 自底向上的并归排序 和 自顶向下的比较次数和数组的访问次数 相同
-   * 自底向上的并归比较适合链表结构，可以实现链表的原地排序
-   */
-  public static void sortBottomUp(Comparable[] a) {
-    int N = a.length;
-    aux = new Comparable[N];
-    for (int sz = 1; sz < N; sz = sz + sz) {
-      //sz为子数组的大小
-      for (int lo = 0; lo < N - sz; lo += sz + sz) {
-        //lo为子数组的索引
-        merge(a, lo, lo + sz - 1, Math.min(lo + sz + sz - 1, N - 1));
-      }
-    }
-  }
-
-  /**
    * 原地并归（辅助数组为静态变量 只需要开辟一次内存空间）
    * 用于对一个以middle为界限的两个有序数组[low~middle]，(middle~height]=[middle+1~height]（在同一个数组空间上）的合并
    * 通过合并实现对整个数组段内（low~height）的排序
@@ -80,4 +64,22 @@ public class Merge {
       }
     }
   }
+
+  /**
+   * 自底向上的并归排序 和 自顶向下的比较次数和数组的访问次数 相同
+   * 自底向上的并归比较适合链表结构，可以实现链表的原地排序
+   */
+  public static void sortBottomUp(Comparable[] a) {
+    int N = a.length;
+    aux = new Comparable[N];
+    for (int sz = 1; sz < N; sz = sz + sz) {
+      //sz为子数组的大小
+      for (int lo = 0; lo < N - sz; lo += sz + sz) {
+        //lo为子数组的索引
+        merge(a, lo, lo + sz - 1, Math.min(lo + sz + sz - 1, N - 1));
+      }
+    }
+  }
+
+
 }

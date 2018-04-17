@@ -57,7 +57,7 @@ public class StringSortMSD {
   // return dth character of s, -1 if d = length of string
   private static int charAt(String s, int d) {
     assert d >= 0 && d <= s.length();
-    if (d == s.length()) {
+    if (d >= s.length()) {
       return -1;
     }
     char charIndex = s.charAt(d);
