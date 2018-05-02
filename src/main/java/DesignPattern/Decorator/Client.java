@@ -9,5 +9,6 @@ public class Client {
     Component component = new ConcreteDecoratorA(new ConcreteComponent());
     String result = component.operation();
     System.out.println("装饰模式 得到的动态修饰结果:"+result);
+
   }
 }
