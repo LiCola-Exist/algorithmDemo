@@ -5,7 +5,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Created by LiCola on 2017/11/20.
+ * Created by LiCola on 2017/11/20. LinkedBlockingQueue内部实现了有容量限制的阻塞链表 take取时：数量为0阻塞 put存时：数量超过容量阻塞
+ * 内部实现生产者/消费者模型
  */
 public class BlockingQueueModel implements Model {
 
