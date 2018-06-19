@@ -1,5 +1,7 @@
 package design.composite;
 
+import com.licola.llogger.LLogger;
+
 /**
  * Created by LiCola on 2017/8/4.
  */
@@ -11,6 +13,6 @@ public class Leaf extends Component {
 
   @Override
   public void someOperation() {
-    System.out.println(name+" 子对象 操作方法调用");
+    LLogger.d(name+" 子对象 操作方法调用");
   }
 }

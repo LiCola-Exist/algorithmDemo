@@ -18,6 +18,6 @@ public class StringTrieTest {
     trie.put("clone",3);
     trie.put("double",4);
 
-    System.out.println("find \"able\" in trie:"+trie.get("able"));
+    LLogger.d("find \"able\" in trie:"+trie.get("able"));
   }
 }

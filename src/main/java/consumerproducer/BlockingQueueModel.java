@@ -1,5 +1,6 @@
 package consumerproducer;
 
+import com.licola.llogger.LLogger;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -36,7 +37,7 @@ public class BlockingQueueModel implements Model {
     public void consume() throws InterruptedException {
       Task task = queue.take();
       Thread.sleep(500 + (long) (Math.random() * 500));
-      System.out.println("consume:" + task.taskId);
+      LLogger.d("consume:" + task.taskId);
     }
   }
 
@@ -47,7 +48,7 @@ public class BlockingQueueModel implements Model {
       Thread.sleep((long) (Math.random() * 1000));
       Task task = new Task(increateTaskIds.getAndIncrement());
       queue.put(task);
-      System.out.println("produce:" + task.taskId);
+      LLogger.d("produce:" + task.taskId);
     }
   }
 

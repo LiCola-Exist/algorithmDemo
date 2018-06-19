@@ -14,6 +14,6 @@ public class BinarySearchTest {
   public void search() {
     int search = BinarySearch.search(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8}, 8);
     assertEquals(7,search);
-    System.out.println("二分查找 search:"+search);
+    LLogger.d("二分查找 search:"+search);
   }
 }

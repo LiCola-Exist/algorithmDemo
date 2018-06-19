@@ -20,7 +20,7 @@ public class Different2ArrayTest {
       a.add(String.valueOf(i));
     }
     List<String> overlaps = different2Array.overlaps(a, Arrays.asList("100", "200"));
-    System.out.println(overlaps);
+    LLogger.d(overlaps);
     assertEquals(2, overlaps.size());
   }
 }

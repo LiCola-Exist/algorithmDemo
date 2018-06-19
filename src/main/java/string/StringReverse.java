@@ -1,5 +1,7 @@
 package string;
 
+import com.licola.llogger.LLogger;
+
 /**
  * Created by LiCola on 2017/10/14.
  */
@@ -7,11 +9,11 @@ public class StringReverse {
 
   public static final void main(String[] args) {
     String target = "123";
-    System.out.println("old target:" + target);
+    LLogger.d("old target:" + target);
     target = reverseBufferApi(target);
-    System.out.println("reverse target:" + target);
+    LLogger.d("reverse target:" + target);
     target = reverseRecursive(target);
-    System.out.println("reverse double reverse target:" + target);
+    LLogger.d("reverse double reverse target:" + target);
   }
 
   private static String reverseBufferApi(String target) {

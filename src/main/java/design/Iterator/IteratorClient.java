@@ -1,5 +1,7 @@
 package design.Iterator;
 
+import com.licola.llogger.LLogger;
+
 /**
  * Created by LiCola on 2017/8/1.
  */
@@ -9,8 +11,8 @@ public class IteratorClient {
     IteratorClient client = new IteratorClient();
     client.somOperate();
 
-    System.out.println("data " + (100 * 0.75f));
-    System.out.println("data " + (100 * 3 >> 2));
+    LLogger.d("data " + (100 * 0.75f));
+    LLogger.d("data " + (100 * 3 >> 2));
   }
 
   public void somOperate() {
@@ -21,7 +23,7 @@ public class IteratorClient {
     iterator.first();
     while (!iterator.isDone()) {
       String s = iterator.currentItem();
-      System.out.println("item = " + s);
+      LLogger.d("item = " + s);
       iterator.next();
     }
   }

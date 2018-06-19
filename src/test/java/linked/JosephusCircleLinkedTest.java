@@ -18,10 +18,10 @@ public class JosephusCircleLinkedTest {
     int k = 2;
     LinkedList circle = mackCircle(size);
     int[] removes = JosephusCircleLinked.remove(circle, size, k);
-    System.out.println(Arrays.toString(removes));
+    LLogger.d(Arrays.toString(removes));
 
     int lastPosition = JosephusCircleLinked.josephus(size, k);
-    System.out.println("josephus last position：" + lastPosition);
+    LLogger.d("josephus last position：" + lastPosition);
   }
 
   public static LinkedList mackCircle(int size) {

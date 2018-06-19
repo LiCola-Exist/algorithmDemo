@@ -1,5 +1,7 @@
 package design.decorator;
 
+import com.licola.llogger.LLogger;
+
 /**
  * Created by LiCola on 2018/4/17.
  */
@@ -10,7 +12,7 @@ public class ConcreteDecoratorB extends Decorator {
   }
 
   private void addFunciton(){
-    System.out.println("动态添加了方法B");
+    LLogger.d("动态添加了方法B");
   }
 
   @Override

@@ -19,17 +19,17 @@ public class AgeSortBigNumberTest {
     }
     Collections.shuffle(employees);
 
-    System.out.println("乱序输入---");
+    LLogger.d("乱序输入---");
     for (Employee item :
         employees) {
-      System.out.println(item);
+      LLogger.d(item);
     }
 
-    System.out.println("排序结果---");
+    LLogger.d("排序结果---");
     List<Employee> result = AgeSortBigNumber.sort(employees);
     for (Employee item :
         result) {
-      System.out.println(item);
+      LLogger.d(item);
     }
 
   }

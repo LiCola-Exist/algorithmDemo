@@ -1,5 +1,6 @@
 package util;
 
+import com.licola.llogger.LLogger;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
@@ -24,7 +25,7 @@ public class StdOut {
       out = new PrintWriter(new OutputStreamWriter(System.out, CHARSET_NAME), true);
     }
     catch (UnsupportedEncodingException e) {
-      System.out.println(e);
+      LLogger.d(e);
     }
   }
 

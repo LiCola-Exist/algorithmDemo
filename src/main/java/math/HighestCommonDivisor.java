@@ -1,5 +1,7 @@
 package math;
 
+import com.licola.llogger.LLogger;
+
 /**
  * Created by LiCola on 2017/12/4.
  * 求最大公约数
@@ -14,9 +16,9 @@ public class HighestCommonDivisor {
   public static final void main(String[] args) {
     int a = 12550;
     int b = 150;
-    System.out.println("a:" + a + " b:" + b + " highest common divisor 1:" + divisor1(a, b));
-    System.out.println("a:" + a + " b:" + b + " highest common divisor 2:" + divisor2(a, b));
-    System.out.println("a:" + a + " b:" + b + " highest common divisor 3:" + divisor3(a, b));
+    LLogger.d("a:" + a + " b:" + b + " highest common divisor 1:" + divisor1(a, b));
+    LLogger.d("a:" + a + " b:" + b + " highest common divisor 2:" + divisor2(a, b));
+    LLogger.d("a:" + a + " b:" + b + " highest common divisor 3:" + divisor3(a, b));
   }
 
   /**

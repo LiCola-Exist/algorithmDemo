@@ -1,5 +1,7 @@
 package design.singleton;
 
+import com.licola.llogger.LLogger;
+
 /**
  * Created by LiCola on 2018/3/14.
  * 类级内部类的单例实现，由JVM类加载机制保证线程安全，巧妙的由类级内部类实现访问控制限制
@@ -15,7 +17,7 @@ public class SingletonInnerHolder {
     private static SingletonInnerHolder INSTANCE = new SingletonInnerHolder();
 
     static {
-      System.out.println("内部类的初始化");
+      LLogger.d("内部类的初始化");
     }
 
   }
@@ -26,10 +28,10 @@ public class SingletonInnerHolder {
   }
 
   private SingletonInnerHolder() {
-    System.out.println("类级内部类的单例 实例化");
+    LLogger.d("类级内部类的单例 实例化");
   }
 
   static {
-    System.out.println("外部类的初始化");
+    LLogger.d("外部类的初始化");
   }
 }

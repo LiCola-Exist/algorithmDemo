@@ -1,5 +1,6 @@
 package consumerproducer.SynchronizeWay;
 
+import com.licola.llogger.LLogger;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
@@ -60,7 +61,7 @@ public class BlockingQueue<E> {
           while (true) {
             String task = String.valueOf(number);
             queue.put(task);
-            System.out.println("producer make:" + task);
+            LLogger.d("producer make:" + task);
             number++;
             Thread.sleep((long) (Math.random() * 100));
           }
@@ -76,7 +77,7 @@ public class BlockingQueue<E> {
         try {
           while (true) {
             String take = queue.take();
-            System.out.println("consumer user:" + take);
+            LLogger.d("consumer user:" + take);
             Thread.sleep((long) (Math.random() * 100));
           }
         } catch (InterruptedException e) {

@@ -17,10 +17,10 @@ public class RemoveDuplicatesFromSortedTest {
     head.next = listNodeNext;
     listNodeNext.next = listNodeNext2;
 
-    System.out.println("remove before:" + head);
+    LLogger.d("remove before:" + head);
 
     head = RemoveDuplicatesFromSorted.deleteDuplicates(head);
 
-    System.out.println("remove after:" + head);
+    LLogger.d("remove after:" + head);
   }
 }

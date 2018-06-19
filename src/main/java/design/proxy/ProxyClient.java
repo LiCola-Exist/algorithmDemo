@@ -1,5 +1,6 @@
 package design.proxy;
 
+import com.licola.llogger.LLogger;
 import java.lang.reflect.Proxy;
 import java.sql.SQLException;
 
@@ -22,9 +23,9 @@ public class ProxyClient {
     Api api = ProxyInstance.create(Api.class);
     String result = api.doSomething(12);
 
-    System.out.println("api: result =" + result);
+    LLogger.d("api: result =" + result);
 
-    System.out.println("api: class:" + api.getClass().toString());
+    LLogger.d("api: class:" + api.getClass().toString());
   }
 
   private static void testService() {
@@ -36,7 +37,7 @@ public class ProxyClient {
 //        return null;
       }
     });
-    System.out.println("service: input = " + input);
+    LLogger.d("service: input = " + input);
   }
 
   private static void testException() {

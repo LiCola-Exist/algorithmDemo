@@ -24,17 +24,17 @@ public class TreeTraversalTest {
     TreeNode<String> root = TreeNode.makeTree("root", "A", "B", "C", "D");
     ArrayList<TreeNode> result = new ArrayList<>();
     TreeTraversal.depthOrderTraversal(root, result);
-    System.out.println("深度优先遍历 递归实现:");
+    LLogger.d("深度优先遍历 递归实现:");
     for (TreeNode item :
         result) {
-      System.out.println(item.val);
+      LLogger.d(item.val);
     }
 
     List<TreeNode> treeNodes = TreeTraversal.depthOrderTraversal(root);
-    System.out.println("深度优先遍历 迭代 栈实现:");
+    LLogger.d("深度优先遍历 迭代 栈实现:");
     for (TreeNode item :
         treeNodes) {
-      System.out.println(item.val);
+      LLogger.d(item.val);
     }
 
   }
@@ -51,10 +51,10 @@ public class TreeTraversalTest {
      */
     TreeNode<String> root = TreeNode.makeTree("root", "A", "B", "C", "D");
     List<TreeNode> result = TreeTraversal.levelOrderTraversal(root);
-    System.out.println("广度优先遍历 迭代 队列实现:");
+    LLogger.d("广度优先遍历 迭代 队列实现:");
     for (TreeNode item :
         result) {
-      System.out.println(item.val);
+      LLogger.d(item.val);
     }
   }
 }

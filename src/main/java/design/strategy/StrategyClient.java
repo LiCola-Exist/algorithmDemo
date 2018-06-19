@@ -1,5 +1,6 @@
 package design.strategy;
 
+import com.licola.llogger.LLogger;
 import design.strategy.Strategy.ConcreteStrategyOriginal;
 
 /**
@@ -13,7 +14,7 @@ public class StrategyClient {
     Strategy strategy = new ConcreteStrategyOriginal();
     Context context = new Context(strategy);
     int price = context.calePrice(100);
-    System.out.println("price:" + price);
+    LLogger.d("price:" + price);
 
 
   }

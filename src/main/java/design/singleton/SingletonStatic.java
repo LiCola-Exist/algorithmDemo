@@ -1,5 +1,7 @@
 package design.singleton;
 
+import com.licola.llogger.LLogger;
+
 /**
  * Created by LiCola on 2018/3/14.
  * 饿汉模式的 单例
@@ -19,10 +21,10 @@ public class SingletonStatic {
   }
 
   private SingletonStatic() {
-    System.out.println("单例被实例化");
+    LLogger.d("单例被实例化");
   }
 
   static {
-    System.out.println("单例的延迟加载失效");
+    LLogger.d("单例的延迟加载失效");
   }
 }

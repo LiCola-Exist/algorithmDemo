@@ -1,5 +1,7 @@
 package design.memento;
 
+import com.licola.llogger.LLogger;
+
 /**
  * Created by LiCola on 2017/7/4.
  * 备忘录使用示例
@@ -21,7 +23,7 @@ public class MementoClient {
 
     originatorRebuild.setMemento(caretaker.retriveMemento());//从管理器中恢复保存状态
 
-    System.out.println(originatorRebuild.toString());//输出 "Originator{status='run'}"表示成功恢复内部状态
+    LLogger.d(originatorRebuild.toString());//输出 "Originator{status='run'}"表示成功恢复内部状态
 
   }
 }

@@ -1,5 +1,7 @@
 package sort;
 
+import com.licola.llogger.LLogger;
+
 /**
  * Created by LiCola on 2018/3/2.
  */
@@ -19,8 +21,8 @@ public class Example {
       for(int i=0;i<a.length;i++){
         System.out.print(a[i]+" ");
       }
-      System.out.println("");
-      System.out.println("输出结束----");
+      LLogger.d("");
+      LLogger.d("输出结束----");
     }
 
     public static boolean isSorted(Comparable[] a){

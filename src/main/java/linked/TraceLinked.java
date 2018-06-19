@@ -1,5 +1,6 @@
 package linked;
 
+import com.licola.llogger.LLogger;
 import linked.LinkedList.Node;
 
 /**
@@ -132,10 +133,10 @@ public class TraceLinked {
       linkedList.add(i);
     }
     linkedList.print();
-    System.out.println("get 2 last node :" + linkedList.getLastK(2));
-    System.out.println("get middle node :" + linkedList.getMiddle());
+    LLogger.d("get 2 last node :" + linkedList.getLastK(2));
+    LLogger.d("get middle node :" + linkedList.getMiddle());
 
-    System.out.println("this circle test--->");
+    LLogger.d("this circle test--->");
     DoublePointerLinkedList linkedListCircle = new DoublePointerLinkedList();
     Node nodeLast;
     Node nodeCircleEntry = null;
@@ -145,7 +146,7 @@ public class TraceLinked {
 
       if (i == 2) {
         nodeCircleEntry = tempNode;
-        System.out.println(nodeCircleEntry);
+        LLogger.d(nodeCircleEntry);
       }
 
       if (i == (length - 1)) {
@@ -154,9 +155,9 @@ public class TraceLinked {
       }
 
     }
-    System.out.println("this linked list has circle:" + (linkedListCircle.hasCircle() != null));
-    System.out.println("this linked list circle length:" + linkedListCircle.getCircleLength());
-    System.out.println("this linked list circle entry:" + linkedListCircle.getCircleEntry().data);
+    LLogger.d("this linked list has circle:" + (linkedListCircle.hasCircle() != null));
+    LLogger.d("this linked list circle length:" + linkedListCircle.getCircleLength());
+    LLogger.d("this linked list circle entry:" + linkedListCircle.getCircleEntry().data);
 //    linkedListCircle.print();//有环列表 无法遍历完成
   }
 }

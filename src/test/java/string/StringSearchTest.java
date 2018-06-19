@@ -16,7 +16,7 @@ public class StringSearchTest {
 
     int index1 = StringSearch.searchViolent("ed", "abc");
     assertEquals(-1, index1);
-    System.out.println("search not find index:" + index1);
+    LLogger.d("search not find index:" + index1);
   }
 
   @Test
@@ -26,6 +26,6 @@ public class StringSearchTest {
 
     int index1 = StringSearch.searchBack("ed", "abc");
     assertEquals(-1, index1);
-    System.out.println("search not find index:" + index1);
+    LLogger.d("search not find index:" + index1);
   }
 }

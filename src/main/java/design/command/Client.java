@@ -17,7 +17,7 @@ public class Client {
 
     //创建invoker对象 注入命令对象
     Invoker invoker=new Invoker();
-    invoker.setCommand(command);
+    invoker.setCommandAction(command);
 
     //通过持有的命令对象 执行对应的命令
     invoker.runCommand();

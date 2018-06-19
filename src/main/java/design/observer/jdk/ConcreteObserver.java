@@ -1,5 +1,6 @@
 package design.observer.jdk;
 
+import com.licola.llogger.LLogger;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -16,7 +17,7 @@ public class ConcreteObserver implements Observer {
 
   @Override
   public void update(Observable observable, Object arg) {
-    System.out.println("name:"+name+" observable:"+observable+" arg:"+arg);
+    LLogger.d("name:"+name+" observable:"+observable+" arg:"+arg);
   }
 
 

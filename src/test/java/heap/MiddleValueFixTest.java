@@ -15,7 +15,7 @@ public class MiddleValueFixTest {
     for (int item :
         source) {
       middleValueFix.add(item);
-      System.out.println("getMiddle:" + middleValueFix.getMiddle());
+      LLogger.d("getMiddle:" + middleValueFix.getMiddle());
     }
   }
 }

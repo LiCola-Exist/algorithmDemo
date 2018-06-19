@@ -15,6 +15,6 @@ public class BitMapDuplicatesTest {
   public void duplicate() {
     List<Integer> duplicate = BitMapDuplicates
         .duplicate(new int[]{1, 2, 4, 8, 16, 30, 32, 100,1000000000}, new int[]{2, 30, 32, 100, 200});
-    System.out.println(Arrays.toString(duplicate.toArray()));
+    LLogger.d(Arrays.toString(duplicate.toArray()));
   }
 }

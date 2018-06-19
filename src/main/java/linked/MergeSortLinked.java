@@ -3,6 +3,7 @@ package linked;
 
 import static linked.LinkedList.printNode;
 
+import com.licola.llogger.LLogger;
 import linked.LinkedList.Node;
 
 /**
@@ -35,10 +36,10 @@ public class MergeSortLinked {
     for (int i = 3; i > 0; i--) {
       linkedListOrder.add(i);
     }
-    System.out.println("待排序单链表");
+    LLogger.d("待排序单链表");
     printNode(linkedListOrder.getHead());
     Node sort = sort(linkedListOrder.getHead());
-    System.out.println("排序完成");
+    LLogger.d("排序完成");
     printNode(sort);
   }
 

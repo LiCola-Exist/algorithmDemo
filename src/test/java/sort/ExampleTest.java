@@ -62,7 +62,7 @@ public class ExampleTest {
     assertArrayEquals(new Character[]{'A', 'E', 'E', 'L', 'M', 'O', 'P', 'R', 'S', 'T', 'X'},
         characters);
 
-    System.out.println("并归的非递归形式");
+    LLogger.d("并归的非递归形式");
     Character[] characters1 = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E'};
     Example.show(characters1);
     Merge.sortBottomUp(characters1);

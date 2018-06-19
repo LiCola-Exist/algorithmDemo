@@ -17,6 +17,6 @@ public class TopKTest {
     for (int i = 0; i < 10; i++) {
       topK.add(i);
     }
-    System.out.println("top " + limit + ":" + Arrays.toString(topK.toArray(new Integer[limit])));
+    LLogger.d("top " + limit + ":" + Arrays.toString(topK.toArray(new Integer[limit])));
   }
 }

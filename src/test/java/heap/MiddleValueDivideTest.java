@@ -18,6 +18,6 @@ public class MiddleValueDivideTest {
       middleValueDivide.insert(item);
     }
 
-    System.out.println("getMiddle:" + middleValueDivide.getMiddle());
+    LLogger.d("getMiddle:" + middleValueDivide.getMiddle());
   }
 }

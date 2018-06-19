@@ -1,5 +1,7 @@
 package linked;
 
+import com.licola.llogger.LLogger;
+
 /**
  * Created by LiCola on 2017/12/4.
  * 定义Linked 的相关结构和操作
@@ -54,9 +56,9 @@ public class LinkedList {
     }
 
     Node current = node;
-    System.out.println("----node print----");
+    LLogger.d("----node print----");
     while (current != null) {
-      System.out.println("node:" + current.data);
+      LLogger.d("node:" + current.data);
       current = current.next;
     }
   }
@@ -125,7 +127,7 @@ public class LinkedList {
       }
     }
     linkedList.print();
-    System.out.println("delete node:" + nodeIndex);
+    LLogger.d("delete node:" + nodeIndex);
     linkedList.delete(nodeIndex);
     linkedList.print();
 

@@ -1,5 +1,6 @@
 package linked;
 
+import com.licola.llogger.LLogger;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 
@@ -31,7 +32,7 @@ public class LinkedHashMapLRU<K, V> extends LinkedHashMap<K, V> {
     mapInsertOrder.put("d",300);
 
     //键是按照"c", "d", "a"的顺序插入的，修改"d"的值不会修改顺序
-    System.out.println("插入有序： 输出结果根据插入时顺序 后面相同key的修改 不会影响排序 \n"+mapInsertOrder+"\n");
+    LLogger.d("插入有序： 输出结果根据插入时顺序 后面相同key的修改 不会影响排序 \n"+mapInsertOrder+"\n");
 
     LinkedHashMap<String,Integer> mapAccessOrder=new LinkedHashMap<>(16,0.75f,true);
 
@@ -41,7 +42,7 @@ public class LinkedHashMapLRU<K, V> extends LinkedHashMap<K, V> {
     mapAccessOrder.get("c");
     mapAccessOrder.put("d",300);
 
-    System.out.println("访问有序：输出结果根据对Map的键操作顺序 \n"+mapAccessOrder+"\n");
+    LLogger.d("访问有序：输出结果根据对Map的键操作顺序 \n"+mapAccessOrder+"\n");
 
     //默认情况下 LinkedHashMap是没有容量限制的 如果在访问有序的Mao中实现容量限制 就是LRU
 
@@ -52,7 +53,7 @@ public class LinkedHashMapLRU<K, V> extends LinkedHashMap<K, V> {
     lrcCache.get("a");
     lrcCache.put("d","call");
 
-    System.out.println("cache \n"+lrcCache+"\n");
+    LLogger.d("cache \n"+lrcCache+"\n");
   }
 
 }

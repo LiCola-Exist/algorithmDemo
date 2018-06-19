@@ -1,5 +1,6 @@
 package collection;
 
+import com.licola.llogger.LLogger;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Random;
@@ -107,7 +108,7 @@ public class DelayedTaskQueue {
     delayQueue.add(new Student("submit",
         Times.SUBMIT_TIME.getValue(), TimeUnit.SECONDS));
 
-    System.out.println("开始考试:" + DateFormat.getDateTimeInstance().format(new Date()));
+    LLogger.d("开始考试:" + DateFormat.getDateTimeInstance().format(new Date()));
     while (true) {
       //延时的取出元素（这里空队列的阻塞不会发生 因为队列构造在之前）
       //取出方法 会改变堆结构 保证当前堆按照优先级排序
@@ -115,7 +116,7 @@ public class DelayedTaskQueue {
 
       if (student.name.equals("submit")) {
         //取出特殊的 终止节点 根据规则强制全部结束
-        System.out.println("终止时间到， 全部人交卷");
+        LLogger.d("终止时间到， 全部人交卷");
         delayQueue.parallelStream()
             .filter(item -> item.expire
                 >= student.expire)//过滤 取出超时的节点 其实可以不执行 因为根据 延时操作 当前节点中保存的全部是 超时节点
@@ -124,7 +125,7 @@ public class DelayedTaskQueue {
        return;
       } else {
         //取出普通的元素 延时的取出 说明该元素到期
-        System.out.println(student);
+        LLogger.d(student);
       }
     }
 

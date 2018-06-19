@@ -1,5 +1,6 @@
 package design.composite;
 
+import com.licola.llogger.LLogger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class Composite extends Component {
 
   @Override
   public void someOperation() {
-    System.out.println(name + " 组合对象遍历子对象");
+    LLogger.d(name + " 组合对象遍历子对象");
     if (childComponent == null) {
       return;
     }
