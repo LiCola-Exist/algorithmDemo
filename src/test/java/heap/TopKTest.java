@@ -2,6 +2,7 @@ package heap;
 
 import static org.junit.Assert.*;
 
+import com.licola.llogger.LLogger;
 import java.util.Arrays;
 import org.junit.Test;
 

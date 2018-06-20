@@ -2,6 +2,7 @@ package tree;
 
 import static org.junit.Assert.*;
 
+import com.licola.llogger.LLogger;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;

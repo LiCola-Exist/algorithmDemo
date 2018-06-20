@@ -8,7 +8,7 @@ import java.util.HashMap;
  * You are climbing a stair case. It takes n steps to reach to the top.
  * Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
  *
- * 爬楼梯，一次1步或2步，爬到顶部要多少步
+ * 爬楼梯，一次1步或2步，爬到顶部有多少种走法
  * 假设已经来到最后一步，有且仅有两种情况，1：从8-10走2步，：2：从9-10走1步，依次类推，缩小问题规模
  * 解题思路：这是最简单的动态规划问题，我们推导出公式
  * F(1)=1

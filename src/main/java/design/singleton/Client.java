@@ -9,15 +9,35 @@ public class Client {
 
   public static final void main(String[] args) {
 //    testStatic();
-    testInnerClass();
+//    testInnerClass();
 //    testDCL();
+    testClassLoad();
+  }
+
+  private static void testClassLoad() {
+    //这个只是获取一些类信息 加载类但是不会初始化类
+    Class<SingletonStatic> singletonStaticClass = SingletonStatic.class;
+    LLogger.d(singletonStaticClass);
+
+    //反射获取类
+    try {
+      //默认会进行类加载和初始化，进而使得类的静态变量加载，使得懒汉模式单例失效。
+      Class<?> forName = Class.forName("design.singleton.SingletonStatic");
+
+      //方法中指定不初始化类
+//      Class<?> forName = Class.forName("design.singleton.SingletonStatic",false,singletonStaticClass.getClassLoader());
+      LLogger.d(forName);
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    }
+
   }
 
   private static void testDCL() {
 
-    Thread[] threads=new Thread[100];
+    Thread[] threads = new Thread[100];
     for (int i = 0; i < threads.length; i++) {
-      threads[i]=new Thread(new Runnable() {
+      threads[i] = new Thread(new Runnable() {
         @Override
         public void run() {
           LLogger.d(
