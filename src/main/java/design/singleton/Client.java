@@ -1,6 +1,7 @@
 package design.singleton;
 
 import com.licola.llogger.LLogger;
+import java.io.BufferedReader;
 
 /**
  * Created by LiCola on 2018/3/14.
@@ -18,6 +19,8 @@ public class Client {
     //这个只是获取一些类信息 加载类但是不会初始化类
     Class<SingletonStatic> singletonStaticClass = SingletonStatic.class;
     LLogger.d(singletonStaticClass);
+
+    BufferedReader reader=null;
 
     //反射获取类
     try {

@@ -1,6 +1,7 @@
 package design.proxy;
 
 import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
@@ -38,7 +39,18 @@ public class ProxyInstance<T> implements InvocationHandler {
     }
 
     if (target != null) {
+      //经过代理方法调用 如果代理的方法有受检异常
+
+      //直接的方法调用会变成未受检异常UndeclaredThrowableException
       return method.invoke(target, args);
+
+      //手动catch捕获反射方法调用时的调用目标异常 并抛出实际异常
+//      try {
+//        return method.invoke(target, args);
+//      } catch (InvocationTargetException e) {
+//        throw e.getCause();
+//      }
+
     }
 
     return null;

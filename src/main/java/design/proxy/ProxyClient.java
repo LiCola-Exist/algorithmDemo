@@ -11,9 +11,9 @@ public class ProxyClient {
     //设置属性 保留ProxyGenerator类生成的字节码文件
     System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
 
-    testApi();
+//    testApi();
 
-    testService();
+//    testService();
 
     testException();
   }
@@ -43,21 +43,23 @@ public class ProxyClient {
   private static void testException() {
 
     ApiException apiExceptionImpl = new ApiExceptionImpl();
-    ApiException apiException = (ApiException) Proxy.newProxyInstance(apiExceptionImpl.getClass().getClassLoader(),
-        apiExceptionImpl.getClass().getInterfaces(), new ProxyInstance<>(apiExceptionImpl));
+    ApiException apiException = (ApiException) Proxy
+        .newProxyInstance(apiExceptionImpl.getClass().getClassLoader(),
+            apiExceptionImpl.getClass().getInterfaces(), new ProxyInstance<>(apiExceptionImpl));
 
     try {
       apiException.throwException();
     } catch (SQLException e) {
       e.printStackTrace();
     }
+
   }
 
   private static class ApiExceptionImpl implements ApiException {
 
     @Override
     public void throwException() throws SQLException {
-      throw new SQLException("手动代理出的目标");
+      throw new SQLException("故意抛出的受检异常");
     }
   }
 }

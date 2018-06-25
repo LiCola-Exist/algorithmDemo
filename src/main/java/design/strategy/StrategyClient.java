@@ -16,6 +16,5 @@ public class StrategyClient {
     int price = context.calePrice(100);
     LLogger.d("price:" + price);
 
-
   }
 }
