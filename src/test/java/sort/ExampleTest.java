@@ -64,7 +64,8 @@ public class ExampleTest {
         characters);
 
     LLogger.d("并归的非递归形式");
-    Character[] characters1 = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E'};
+    Character[] characters1 = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L',
+        'E'};
     Example.show(characters1);
     Merge.sortBottomUp(characters1);
     Example.show(characters1);
@@ -73,7 +74,7 @@ public class ExampleTest {
   }
 
   @Test
-  public void sortQuick(){
+  public void sortQuick() {
     Character[] characters = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E'};
     Example.show(characters);
     Quick.sort(characters);

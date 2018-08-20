@@ -8,7 +8,7 @@ import java.util.Stack;
  * 同时考虑中间状态，B栈中已经有数据，根据上面的约定，即B栈中的数据是之前A栈的数据逆向，所以当B栈有数就也就直接取
  *
  * @author LiCola
- * @data 2018/7/23
+ * @date 2018/7/23
  */
 public class TwoStackQueue<E> {
 

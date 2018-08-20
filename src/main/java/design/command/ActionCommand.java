@@ -1,7 +1,6 @@
 package design.command;
 
 import com.licola.llogger.LLogger;
-import com.sun.tools.javah.LLNI;
 
 /**
  * Created by LiCola on 2018/6/11. 具体的命令实现对象
