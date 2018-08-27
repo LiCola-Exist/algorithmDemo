@@ -1,4 +1,4 @@
-package design.visitor;
+package design.visitor.base;
 
 /**
  * Created by LiCola on 2017/7/8.

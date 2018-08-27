@@ -1,4 +1,4 @@
-package design.visitor;
+package design.visitor.base;
 
 /**
  * Created by LiCola on 2017/7/8.
@@ -18,6 +18,17 @@ public class VisitorClient {
 
     Visitor visitor = new ConcreteVisitor();
     objectStructure.handleRequest(visitor);
+    objectStructure.handleRequest(new Visitor() {
+      @Override
+      public void visitConcreteElementA(ConcreteElementA elementA) {
+
+      }
+
+      @Override
+      public void visitConcreteElementB(ConcreteElementB elementB) {
+
+      }
+    });
   }
 
 }

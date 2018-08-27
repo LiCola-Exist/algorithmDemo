@@ -1,4 +1,4 @@
-package design.visitor;
+package design.visitor.base;
 
 import java.util.ArrayList;
 import java.util.List;
