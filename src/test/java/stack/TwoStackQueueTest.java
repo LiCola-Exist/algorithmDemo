@@ -1,4 +1,4 @@
-package queue;
+package stack;
 
 import static org.junit.Assert.*;
 
@@ -17,7 +17,7 @@ public class TwoStackQueueTest {
     stackQueue.add("1");
     stackQueue.add("2");
     stackQueue.add("3");
-    assertEquals("1",stackQueue.poll());
+    assertEquals("1",stackQueue.poll());//队列 先进先出
 
     stackQueue.add("4");
     stackQueue.add("5");
