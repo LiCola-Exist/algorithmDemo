@@ -16,7 +16,7 @@ public class AgeSortBigNumberTest {
   public void sort() {
     List<AgeSortBigNumber.Employee> employees = new ArrayList<>();
     for (int i = 0; i < 20; i++) {
-      employees.add(new Employee(18 + (i % 10), "a" + i));
+      employees.add(new Employee(18 + (i % 10), "index:" + i));
     }
     Collections.shuffle(employees);
 
