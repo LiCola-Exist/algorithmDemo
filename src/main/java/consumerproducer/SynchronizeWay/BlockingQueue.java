@@ -3,6 +3,8 @@ package consumerproducer.SynchronizeWay;
 import com.licola.llogger.LLogger;
 import java.util.ArrayDeque;
 import java.util.Queue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Created by LiCola on 2017/8/11. 协作的共享变量，阻塞队列。 生产者：往队列上放数据，如果数量满了，就wait等待消费。
@@ -27,7 +29,9 @@ public class BlockingQueue<E> {
     synchronized (this) {
       while (queue.size() == limit) {
         wait();
+        //用循环来阻塞、每次都检查条件，否则wait之后直接方法，出现数据错误错误
       }
+
       queue.add(e);
       notify();
     }
@@ -43,7 +47,7 @@ public class BlockingQueue<E> {
         wait();
       }
       E e = queue.poll();
-      notifyAll();
+      notify();
       return e;
     }
 
@@ -53,21 +57,22 @@ public class BlockingQueue<E> {
   public static final void main(String[] args) throws InterruptedException {
     BlockingQueue<String> queue = new BlockingQueue<String>(10);
 
-    int producerSize = 2;
-    Thread[] producerThread = new Thread[producerSize];
+    int producerSize = 10;
 
-    for (int i = 0; i < producerThread.length; i++) {
+    ExecutorService producerPoll = Executors.newFixedThreadPool(producerSize);
 
-      int tName = i;
-      producerThread[i] = new Thread(new Runnable() {
+    for (int i = 0; i < producerSize; i++) {
+
+      final int index = i;
+      producerPoll.execute(new Runnable() {
         @Override
         public void run() {
           int number = 0;
           try {
             while (true) {
-              Thread.sleep((long) (1 * 10));
+              Thread.sleep(100);
               String task = String.valueOf(number);
-              String data = "P-" + tName + ":" + task;
+              String data = "P-" + index + ":" + task;
               queue.put(data);
               LLogger.d("producer put:" + data);
               number++;
@@ -79,19 +84,18 @@ public class BlockingQueue<E> {
       });
     }
 
-    int consumerSize = 1;
-    Thread[] consumerThread = new Thread[consumerSize];
-
-    for (int i = 0; i < consumerThread.length; i++) {
-      int tName = i;
-      consumerThread[i] = new Thread(new Runnable() {
+    int consumerSize = 10;
+    ExecutorService consumerPoll = Executors.newFixedThreadPool(consumerSize);
+    for (int i = 0; i < consumerSize; i++) {
+      final int index = i;
+      consumerPoll.execute(new Runnable() {
         @Override
         public void run() {
           try {
             while (true) {
-              Thread.sleep((long) (10 * 10));
+              Thread.sleep((long) 100);
               String take = queue.take();
-              LLogger.d("consumer take " + tName + ":" + take);
+              LLogger.d("consumer take " + index + ":" + take);
             }
           } catch (InterruptedException e) {
 
@@ -99,16 +103,6 @@ public class BlockingQueue<E> {
         }
       });
     }
-
-    for (Thread thread : consumerThread) {
-      thread.start();
-    }
-
-    Thread.sleep(400);
-    for (Thread thread : producerThread) {
-      thread.start();
-    }
-
   }
 
 
