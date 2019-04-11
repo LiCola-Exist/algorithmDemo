@@ -3,10 +3,8 @@ package string;
 import java.util.HashMap;
 
 /**
- * https://leetcode.com/problems/implement-trie-prefix-tree/description/
- * 以Hash表实现的字典树，可以输入任意字符，
- * 但是性能相比限定字符集差，hash+equals比较+拆箱
- * 内存也高，包装类和HashMap的初始值，以Leetcode的提交结果支撑
+ * https://leetcode.com/problems/implement-trie-prefix-tree/description/ 以Hash表实现的字典树，可以输入任意字符，
+ * 但是性能相比限定字符集差，hash+equals比较+拆箱 内存也高，包装类和HashMap的初始值，以Leetcode的提交结果支撑
  *
  * Trie trie = new Trie();
  *
@@ -54,12 +52,11 @@ public class PrefixHashTrie {
 
     for (int i = 0, length = word.length(); i < length; i++) {
       char wordChar = word.charAt(i);
-      if (curChildren.containsKey(wordChar)) {
-        cur = curChildren.get(wordChar);
-      } else {
-        TrieNode childNode = new TrieNode(wordChar);
-        curChildren.put(wordChar, childNode);
-        cur = childNode;
+
+      cur = curChildren.get(wordChar);
+      if (cur == null) {
+        cur = new TrieNode(wordChar);
+        curChildren.put(wordChar, cur);
       }
       curChildren = cur.children;
 
@@ -89,14 +86,19 @@ public class PrefixHashTrie {
 
   private TrieNode searchNode(String word) {
     TrieNode cur = root;
+
+    HashMap<Character, TrieNode> curChildren = cur.children;
+
     for (int i = 0, length = word.length(); i < length; i++) {
       char wordChar = word.charAt(i);
-      if (cur.children.containsKey(wordChar)) {
-        cur = cur.children.get(wordChar);
-      } else {
+
+      cur = curChildren.get(wordChar);
+      if (cur == null) {
         return null;
       }
+      curChildren = cur.children;
     }
+
     return cur;
   }
 }
