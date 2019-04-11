@@ -1,14 +1,18 @@
 package string;
 
-import static org.junit.Assert.*;
-
 import com.licola.llogger.LLogger;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
  * Created by LiCola on 2018/4/10.
  */
 public class StringTrieTest {
+
+  @Before
+  public void setUp(){
+    LLogger.init();
+  }
 
   @Test
   public void get() {
