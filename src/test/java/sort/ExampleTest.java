@@ -39,6 +39,7 @@ public class ExampleTest {
     Character[] characters = new Character[]{'S', 'O', 'R', 'T', 'E', 'X', 'A', 'M', 'P', 'L', 'E'};
     Example.show(characters);
     Bubble.sort(characters);
+
     Example.show(characters);
     assertArrayEquals(new Character[]{'A', 'E', 'E', 'L', 'M', 'O', 'P', 'R', 'S', 'T', 'X'},
         characters);
