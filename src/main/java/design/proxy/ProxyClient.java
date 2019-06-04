@@ -8,12 +8,14 @@ public class ProxyClient {
 
   public static final void main(String[] args) {
 
+    LLogger.init();
+
     //设置属性 保留ProxyGenerator类生成的字节码文件
     System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
 
     testApi();
 
-    testService();
+//    testService();
 
 //    testException();
   }

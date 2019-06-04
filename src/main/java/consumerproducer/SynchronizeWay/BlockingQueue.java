@@ -33,7 +33,7 @@ public class BlockingQueue<E> {
       }
 
       queue.add(e);
-      notify();
+      notifyAll();
     }
   }
 
@@ -41,13 +41,12 @@ public class BlockingQueue<E> {
    * 数据的取出take方法，提供给消费者使用。 当队列为空就wait，否则取出数据并调用notifyAll通知可能的生产者。
    */
   public E take() throws InterruptedException {
-
     synchronized (this) {
       while (queue.isEmpty()) {
         wait();
       }
       E e = queue.poll();
-      notify();
+      notifyAll();
       return e;
     }
 

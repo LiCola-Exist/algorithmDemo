@@ -1,5 +1,6 @@
 package design.proxy;
 
+import com.licola.llogger.LLogger;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -32,7 +33,7 @@ public class ProxyInstance<T> implements InvocationHandler {
 
 
     Class<?> returnType = method.getReturnType();
-
+    LLogger.trace();
     if (tClass == Api.class) {
       return "proxyValue";
     } else if (tClass == ServiceApi.class) {
